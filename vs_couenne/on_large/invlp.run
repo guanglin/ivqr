@@ -1,0 +1,13 @@
+reset;
+options solver couenne;
+model invlp.mod;
+data invlp.dat;
+solve;
+
+print {t in 1..N1} x1[t] >ampl_output.txt;
+print {t in 1..N2} x2[t] >>ampl_output.txt;
+print {t in 1..M} x3_plus[t] >>ampl_output.txt;
+print {t in 1..M} x3_minus[t]>>ampl_output.txt;
+print {t in 1..M} s_plus[t]>>ampl_output.txt;
+print {t in 1..M} s_minus[t]>>ampl_output.txt;
+print solve_result_num >> ampl_output.txt;
